@@ -1,35 +1,236 @@
 <!doctype html>
-<html lang="en">
+<html lang="bg">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Home - Reminder | Developer Website</title>
-  <meta name="description" content="Official developer website for the Home - Reminder iOS app." />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>K-Apps Interactive</title>
+  <meta name="description" content="K-Apps Interactive разработва приложения за App Store и Android. Свържи се: kapps.interactive@gmail.com" />
   <style>
-    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;max-width:860px;margin:40px auto;padding:0 16px;line-height:1.55}
-    header{display:flex;flex-direction:column;gap:6px;margin-bottom:22px}
-    .muted{color:#6b7280}
-    .card{border:1px solid #e5e7eb;border-radius:16px;padding:18px;margin:14px 0}
-    a{color:#2563eb;text-decoration:none} a:hover{text-decoration:underline}
-    ul{margin:10px 0 0 18px}
-    footer{margin-top:26px;font-size:14px;color:#6b7280}
-    code{background:#f3f4f6;padding:2px 6px;border-radius:6px}
+    :root{
+      --bg:#0b1020;
+      --card:#121a33;
+      --text:#e8ecff;
+      --muted:#b9c2ffcc;
+      --accent:#6ee7ff;
+      --accent2:#a78bfa;
+      --border:rgba(255,255,255,.12);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 600px at 20% 10%, rgba(110,231,255,.18), transparent 60%),
+                  radial-gradient(900px 600px at 90% 20%, rgba(167,139,250,.18), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.5;
+    }
+    a{color:inherit}
+    .wrap{
+      max-width:960px;
+      margin:0 auto;
+      padding:28px 18px 60px;
+    }
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      padding:14px 0 24px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      text-decoration:none;
+    }
+    .logo{
+      width:44px;height:44px;border-radius:14px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow: 0 10px 30px rgba(0,0,0,.35);
+      display:grid;place-items:center;
+      font-weight:800;
+      color:#081022;
+    }
+    .brand h1{
+      font-size:18px;
+      margin:0;
+      letter-spacing:.2px;
+    }
+    .brand p{
+      margin:2px 0 0;
+      font-size:13px;
+      color:var(--muted);
+    }
+    nav{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:10px 12px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.04);
+      border-radius:12px;
+      text-decoration:none;
+      font-weight:600;
+      font-size:14px;
+    }
+    .btn:hover{background: rgba(255,255,255,.07)}
+    .btn.primary{
+      border:0;
+      background: linear-gradient(135deg, rgba(110,231,255,.95), rgba(167,139,250,.95));
+      color:#081022;
+    }
+    .hero{
+      display:grid;
+      grid-template-columns: 1.35fr .65fr;
+      gap:18px;
+      align-items:stretch;
+      margin-top:10px;
+    }
+    .card{
+      background: rgba(18,26,51,.78);
+      border:1px solid var(--border);
+      border-radius:18px;
+      padding:20px;
+      box-shadow: 0 18px 45px rgba(0,0,0,.35);
+      backdrop-filter: blur(8px);
+    }
+    .hero h2{
+      font-size:30px;
+      margin:0 0 10px;
+      line-height:1.15;
+    }
+    .hero .lead{
+      margin:0 0 14px;
+      color:var(--muted);
+      font-size:15px;
+    }
+    .chips{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top:12px;
+    }
+    .chip{
+      font-size:12px;
+      padding:7px 10px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.04);
+      color:var(--text);
+    }
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:14px;
+      margin-top:16px;
+    }
+    .grid h3{
+      margin:0 0 6px;
+      font-size:16px;
+    }
+    .grid p{
+      margin:0;
+      color:var(--muted);
+      font-size:14px;
+    }
+    footer{
+      margin-top:22px;
+      text-align:center;
+      color:rgba(233,236,255,.7);
+      font-size:12px;
+      padding-top:18px;
+    }
+    @media (max-width: 860px){
+      .hero{grid-template-columns: 1fr}
+      .grid{grid-template-columns: 1fr}
+      nav{justify-content:flex-start}
+    }
   </style>
 </head>
-<body>
-  <header>
-    <h1>Home - Reminder</h1>
-    <div class="muted">Official developer website</div>
-  </header>
 
-  <div class="card">
-    <h2>About the app</h2>
-    <p>Home - Reminder helps you organize your daily tasks and reminders quickly and easily.</p>
-    <ul>
-      <li>Create reminders in seconds</li>
-      <li>Simple, clean interface</li>
-      <li>Designed for everyday use</li>
-    </ul>
-    <p style="margin-top:12px;">
-      <strong>App Store:</strong>
-      <a href="PASTE_APP_STORE_LIN_
+<body>
+  <div class="wrap">
+    <header>
+      <a class="brand" href="#" aria-label="K-Apps Interactive">
+        <div class="logo">K</div>
+        <div>
+          <h1>K-Apps Interactive</h1>
+          <p>Приложения за App Store и Android</p>
+        </div>
+      </a>
+
+      <nav>
+        <a class="btn" href="#services">Услуги</a>
+        <a class="btn" href="#about">За нас</a>
+        <a class="btn primary" href="mailto:kapps.interactive@gmail.com">Свържи се</a>
+      </nav>
+    </header>
+
+    <section class="hero" id="about">
+      <div class="card">
+        <h2>Разработвам мобилни приложения за App Store и Android</h2>
+        <p class="lead">
+          K-Apps Interactive е мястото, където идеи се превръщат в работещи приложения – с чист дизайн,
+          стабилна функционалност и фокус върху потребителското изживяване.
+        </p>
+
+        <div class="chips" aria-label="Технологии и фокус">
+          <span class="chip">iOS (App Store)</span>
+          <span class="chip">Android (Google Play)</span>
+          <span class="chip">UI/UX</span>
+          <span class="chip">Абонаменти / IAP</span>
+          <span class="chip">Push известия</span>
+        </div>
+
+        <div style="margin-top:16px; display:flex; gap:10px; flex-wrap:wrap;">
+          <a class="btn primary" href="mailto:kapps.interactive@gmail.com">Пиши ми: kapps.interactive@gmail.com</a>
+          <a class="btn" href="#services">Виж услугите</a>
+        </div>
+      </div>
+
+      <aside class="card">
+        <h3 style="margin:0 0 10px; font-size:16px;">Контакт</h3>
+        <p style="margin:0 0 10px; color:var(--muted); font-size:14px;">
+          За партньорства, въпроси или предложения:
+        </p>
+        <a class="btn primary" style="width:100%; justify-content:center;" href="mailto:kapps.interactive@gmail.com">
+          kapps.interactive@gmail.com
+        </a>
+        <div style="margin-top:12px; font-size:12px; color:rgba(233,236,255,.7);">
+          Отговарям възможно най-бързо.
+        </div>
+      </aside>
+    </section>
+
+    <section class="grid" id="services">
+      <div class="card">
+        <h3>App Store & Google Play</h3>
+        <p>Подготовка за публикуване, метаданни, скрийншоти и изисквания за ревю.</p>
+      </div>
+      <div class="card">
+        <h3>Монетизация</h3>
+        <p>Абонаменти и еднократни покупки (IAP), paywall логика и тестване.</p>
+      </div>
+      <div class="card">
+        <h3>Поддръжка и ъпдейти</h3>
+        <p>Оптимизации, фиксове, подобрения и нови версии според обратната връзка.</p>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="y"></span> K-Apps Interactive • Контакт: <a href="mailto:kapps.interactive@gmail.com">kapps.interactive@gmail.com</a>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
