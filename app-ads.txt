@@ -10,3 +10,4 @@ unityads.com, 6104422, DIRECT, 40167c1e3039d67b
 unityads.com, 6104423, DIRECT, 40167c1e3039d67b
 unityads.com, 6104512, DIRECT, 40167c1e3039d67b
 unityads.com, 6104513, DIRECT, 40167c1e3039d67b
+vungle.com, 69f66e9563ed3b5eefe88ebf, DIRECT, c107d686becd2d77
